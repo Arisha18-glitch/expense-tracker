@@ -25,6 +25,7 @@ export default [
       ...reactPlugin.configs.flat.recommended.rules,
       ...reactPlugin.configs.flat["jsx-runtime"].rules,
       ...reactHooks.configs.flat.recommended.rules,
+      "react/jsx-uses-vars": "error",
       "react/prop-types": "off",
     },
     settings: {
