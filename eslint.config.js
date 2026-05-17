@@ -16,14 +16,16 @@ export default [
         ...globals.browser,
       },
       parserOptions: {
+        ecmaVersion: "latest",
         ecmaFeatures: { jsx: true },
+        sourceType: "module",
       },
     },
     rules: {
-      "react/jsx-uses-react": "error",
-      "react/jsx-uses-vars": "error",
-      "react/react-in-jsx-scope": "off",
-      "react-hooks/rules-of-hooks": "error",
+      ...reactPlugin.configs.flat.recommended.rules,
+      ...reactPlugin.configs.flat["jsx-runtime"].rules,
+      ...reactHooks.configs.flat.recommended.rules,
+      "react/prop-types": "off",
     },
     settings: {
       react: { version: "detect" },
